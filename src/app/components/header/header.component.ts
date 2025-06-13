@@ -14,7 +14,7 @@ export class HeaderComponent {
   isSidebarOpen = signal(false);
   isScrolled = signal(false);
   isMobile = signal(window.innerWidth <= 768); // ✅ Track screen size
-
+ 
   toggleSidebar() {
     if (this.isMobile()) {
       this.isSidebarOpen.update(value => !value);
