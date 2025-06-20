@@ -21,4 +21,6 @@ export class HomeComponent {
   hideForm() {
     this.formVisible = false;
   }
+
+  comingSoon = true; // 🔁 Toggle this to false to show video
 }

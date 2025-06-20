@@ -42,14 +42,27 @@
   </section>
 
   <section class="video-section">
-    <div class="video-container">
-      <h2>Watch Our Story</h2>
-      <video controls>
-        <source src="/assets/videos/intro.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </section>
+  <div class="video-container">
+    <h2>Watch Our Story</h2>
+
+    <ng-container *ngIf="!comingSoon; else comingSoonTemplate">
+      <div class="video-wrapper">
+        <video controls>
+          <source src="/assets/videos/intro.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </ng-container>
+
+    <ng-template #comingSoonTemplate>
+      <div class="coming-soon-wrapper">
+        <img src="assets/images/comingsoon.jpg" alt="Coming Soon" />
+        <div class="overlay-text">Coming Soon</div>
+      </div>
+    </ng-template>
+  </div>
+</section>
+
 
   <section class="cta-section">
     <div class="cta-content">

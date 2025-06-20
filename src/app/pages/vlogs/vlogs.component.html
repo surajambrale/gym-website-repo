@@ -1,17 +1,31 @@
 <section class="vlogs-section">
-    <h2>Our Latest Vlogs</h2>
-  
-    <div class="vlog-grid">
-      <div class="vlog-card" *ngFor="let vlog of vlogs">
-        <iframe 
-  [src]="vlog.videoUrl | safeUrl"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
-        <h4>{{ vlog.title }}</h4>
-        <p>{{ vlog.description }}</p>
-      </div>
+  <h2>Our Latest Vlogs</h2>
+
+  <div class="vlog-grid">
+    <div class="vlog-card" *ngFor="let vlog of vlogs">
+
+      <!-- Show video iframe if not coming soon -->
+      <ng-container *ngIf="!vlog.comingSoon; else comingSoonTemplate">
+        <div class="video-wrapper">
+          <iframe 
+            [src]="vlog.videoUrl | safeUrl"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </ng-container>
+
+      <!-- Coming Soon Image -->
+      <ng-template #comingSoonTemplate>
+        <div class="coming-soon-wrapper">
+          <img src="assets/images/comingsoon.jpg" alt="Coming Soon" />
+          <div class="overlay-text">Coming Soon</div>
+        </div>
+      </ng-template>
+
+      <h4>{{ vlog.title }}</h4>
+      <p>{{ vlog.description }}</p>
     </div>
-  </section>
-  
+  </div>
+</section>
