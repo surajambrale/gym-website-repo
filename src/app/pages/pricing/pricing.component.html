@@ -1,56 +1,56 @@
 <section class="pricing-section">
-    <h2>Our Pricing</h2>
-    <p>Choose the plan that fits your fitness journey.</p>
-  
-    <div class="pricing-cards">
-      <div class="pricing-card">
-        <h3>Basic Plan</h3>
-        <p class="price">₹999 / month</p>
-        <ul>
-          <li>- One Time Diet-Plan For Month</li>
-          <li>- Workout Plan</li>
-          <li>- Fitness Test</li>
-          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
-        </ul>
-        <button (click)="openModal('Basic Plan')">Choose Plan</button>
-      </div>
-  
-      <div class="pricing-card popular">
-        <h3>Standard Plan</h3>
-        <p class="price">₹1499 / month</p>
-        <ul>
-          <li>- Wokout Plan As Per Your Goal</li>
-          <li>- Customized Diet-Plan</li>
-          <li>- Monthly Check-ins</li>
-          <li>- 24/7 Whatsapp-Support📱</li>
-          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
-        </ul>
-        <button (click)="openModal('Standard Plan')">Choose Plan</button>
-      </div>
-  
-      <div class="pricing-card">
-        <h3>Premium Plan</h3>
-        <p class="price">₹1999 / month</p>
-        <ul>
-          <li>- Wokout Plan As Per Your Goal</li>
-          <li>- Diet-Plan (Change in 15 days if need)</li>
-          <li>- Weekly Check-ins</li>
-          <li>- Proper Progress Tracking</li>
-          <li>- 24/7 Whatsapp-Support📱</li>
-          <li><b>Note :"Every diet and workout plan is carefully tailored to your health status and medical conditions to ensure safe, effective, and lasting results."</b></li>
-        </ul>
-        <button (click)="openModal('Premium Plan')">Choose Plan</button>
-      </div>
+  <h2>Coaching Packages</h2>
+  <p>Choose the package as per your goal.</p>
 
-
+  <div class="pricing-cards">
+    <div class="pricing-card">
+      <h3>12 Weeks</h3>
+      <p class="price">7,000</p>
+      <button (click)="openModal('Basic Plan')">Choose Plan</button>
     </div>
 
-    
+    <div class="pricing-card popular">
+      <h3>16 Weeks</h3>
+      <p class="price">9,500</p>
+      <button (click)="openModal('Standard Plan')">Choose Plan</button>
+    </div>
 
-    <app-checkout-modal
-  *ngIf="isModalOpen()"
-  [planName]="selectedPlan()"
-  (close)="closeModal()"
-></app-checkout-modal>
-  </section>
-  
+    <div class="pricing-card">
+      <h3>6 Months</h3>
+      <p class="price">12,000</p>
+      <button (click)="openModal('Premium Plan')">Choose Plan</button>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Yearly</h3>
+      <p class="price">20,000</p>
+      <button (click)="openModal('Elite Plan')">Choose Plan</button>
+    </div>
+  </div>
+
+  <!-- Includes Toggle -->
+  <div class="includes-toggle">
+    <button (click)="toggleIncludes()">
+      {{ includesVisible() ? 'Hide Details' : 'What it Include ?' }}
+    </button>
+  </div>
+
+  <!-- Includes Box -->
+  <div class="includes-box" *ngIf="includesVisible()">
+    <ul>
+      <li>Personalised Workout Plan</li>
+      <li>Custom Diet Plan (Veg/Non-Veg)</li>
+      <li>Weekly Check-ins & Adjustments</li>
+      <li>24*7 Whatsapp Support</li>
+      <li>Supplement Guidance</li>
+      
+    </ul>
+  </div>
+
+  <!-- Checkout Modal -->
+  <app-checkout-modal
+    *ngIf="isModalOpen()"
+    [planName]="selectedPlan()"
+    (close)="closeModal()"
+  ></app-checkout-modal>
+</section>

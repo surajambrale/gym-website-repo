@@ -1,101 +1,137 @@
 .pricing-section {
-    text-align: center;
-    padding: 3rem 1rem;
-    background-color: #f9f9f9;
-    background: url('/assets/images/nggym.jpg') no-repeat center center/cover;
-  
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: red;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: url('/assets/images/nggym.jpg') no-repeat center center/cover;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: red;
+  }
+
+  p {
+    margin-bottom: 2rem;
+    color: white;
+  }
+
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .pricing-card {
+    background: rgb(248, 247, 247);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    width: 300px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
     }
-  
-    p {
-      margin-bottom: 2rem;
+
+    h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      color: #e53935;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 0.7rem 1.5rem;
+      background: #e53935;
       color: white;
-    }
-  
-    .pricing-cards {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-  
-    .pricing-card {
-      background: white;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.9);
-      width: 300px;
-      transition: transform 0.3s ease;
-  
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+
       &:hover {
-        transform: translateY(-5px);
-      }
-  
-      h3 {
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-      }
-  
-      .price {
-        font-size: 1.5rem;
-        color: #e53935;
-        margin-bottom: 1rem;
-      }
-  
-      ul {
-        list-style: none;
-        padding: 0;
-        margin-bottom: 1.5rem;
-  
-        li {
-          margin-bottom: 0.5rem;
-          color: #333;
-        }
-      }
-  
-      button {
-        padding: 0.7rem 1.5rem;
-        background: #e53935;
-        color: white;
-        border: none;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        font-weight: bold;
-  
-        &:hover {
-          background: #c62828;
-        }
-      }
-    }
-  
-    .popular {
-      border: 2px solid #e53935;
-      position: relative;
-  
-      &::before {
-        content: "Most Popular";
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #e53935;
-        color: white;
-        padding: 0.2rem 0.6rem;
-        border-radius: 1rem;
-        font-size: 0.8rem;
+        background: #c62828;
       }
     }
   }
 
+  .popular {
+    border: 2px solid #e53935;
+    position: relative;
 
-//blurred background
-.blurred {
-    filter: blur(6px);
-    pointer-events: none;
-    user-select: none;
-    transition: filter 0.3s ease;
+    &::before {
+      content: "Most Popular";
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #e53935;
+      color: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+      font-size: 0.8rem;
+    }
   }
-  
+
+  // Includes Section
+  .includes-toggle {
+    margin-top: 2rem;
+
+    button {
+      padding: 1rem 5rem; // 🔼 increased padding
+      font-size: 1.1rem;
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(217, 214, 214, 0.9);
+
+      &:hover {
+        background: #e53935;
+        border-color: #e53935;
+      }
+    }
+  }
+
+  .includes-box {
+    margin-top: 1.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 4px 20px rgba(217, 214, 214, 0.9);
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      color: #333;
+      font-weight: 500;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

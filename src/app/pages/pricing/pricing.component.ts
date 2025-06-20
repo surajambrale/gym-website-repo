@@ -12,6 +12,7 @@ import { CheckoutModalComponent } from '../../components/checkout-modal/checkout
 export class PricingComponent {
   isModalOpen = signal(false);
   selectedPlan = signal('');
+  includesVisible = signal(false);
 
   openModal(plan: string) {
     this.selectedPlan.set(plan);
@@ -21,5 +22,9 @@ export class PricingComponent {
   closeModal() {
     this.isModalOpen.set(false);
     this.selectedPlan.set('');
+  }
+
+  toggleIncludes() {
+    this.includesVisible.update(v => !v);
   }
 }
