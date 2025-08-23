@@ -24,5 +24,6 @@ export const routes: Routes = [
     { path: 'review', component: ReviewComponent },
     { path: 'vlogs', loadComponent: () => import('./pages/vlogs/vlogs.component').then(m => m.VlogsComponent) },
     { path: 'contact', component: ContactComponent },
+    {path: 'certification', loadComponent: ()=> import('./pages/certificates/certificates.component').then(m=>m.CertificateComponent)},
 
 ];

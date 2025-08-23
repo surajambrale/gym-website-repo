@@ -1,0 +1,9 @@
+<div class="certificates">
+  <h2>Certificates</h2>
+  <div class="cert-list">
+    <div class="cert-card" *ngFor="let cert of certificates">
+      <img [src]="cert.image" alt="{{ cert.title }}" />
+      <h3>{{ cert.title }}</h3>
+    </div>
+  </div>
+</div>
