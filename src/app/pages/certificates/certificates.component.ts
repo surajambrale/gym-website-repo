@@ -13,11 +13,11 @@ export class CertificateComponent {
   certificates = [
     {
       title: 'Nutritionist',
-      image: 'assets/images/certi-fitnessCoach.jpeg'
+      image: 'assets/images/certi-nutrition.jpg'
     },
     {
       title: 'Fitness Coach',
-      image: 'assets/images/certi-fitnessCoach.jpeg'
+      image: 'assets/images/certi-fitnessCoach.jpg'
     }
   ];
 
