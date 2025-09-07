@@ -260,3 +260,9 @@
     }
   }
 //call to action sectrion code ends
+
+.no-underline {
+  text-decoration: none;  /* underline hata dega */
+  color: inherit;         /* button ka text color same rahega */
+  display: inline-block;  /* button jaisa behave karega */
+}

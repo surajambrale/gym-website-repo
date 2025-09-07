@@ -5,7 +5,6 @@
         <p>Your journey to fitness begins here.</p>
         <button class="cta-btn" (click)="showForm()">Join Now</button>
         <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
-
     </div>
 </section>
 
@@ -68,7 +67,10 @@
     <div class="cta-content">
       <h2>Ready to Transform Your Body?</h2>
       <p>Book a free consultation with Suraj Ambrale and take the first step toward your fitness goals.</p>
-      <button class="cta-button" (click)="showForm()">Book Your Free Consult</button>
+      <button class="cta-button" (click)="showForm()">Book Your Free Consult</button><br><br>
+      <a href="https://diet-saas-eta.vercel.app/" target="_blank" rel="noopener noreferrer" class="cta-button no-underline">
+  Buy Diet Plan
+</a>
         <app-join-form *ngIf="formVisible" (onClose)="hideForm()"></app-join-form>
 
     </div>
